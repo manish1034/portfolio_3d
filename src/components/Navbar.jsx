@@ -49,7 +49,7 @@ const Navbar = () => {
               <div className="h-[3rem] w-[12rem] mr-2 border-white/50 border-2 flex items-center justify-center cursor-pointer">
                 <Link to='/contact' 
                   onClick={() => {
-                  window.scrollTo(0, 4760);
+                  window.scrollTo(0, 6580);
                 }}
                 >
                   <p className='font-semibold hover:text-[rgb(144,144,241)] transition-all hover:scale-110 hover:animate-pulse'>Let's Connect</p>
