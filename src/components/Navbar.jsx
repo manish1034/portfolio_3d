@@ -21,13 +21,12 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`${styles.paddingX} w-[94%] flex items-center py-5 fixed top-8 z-50 rounded-2xl mx-10 mr-10 border-2 border-white/10 backdrop-blur-md
+      className={`${styles.paddingX} w-[94%] flex items-center py-5 fixed top-8 z-50 n mx-10 mr-10 border-2 border-white/10 backdrop-blur-md
       `}>
           <div className='w-full flex justify-between items-center mx-auto'>
             <Link
