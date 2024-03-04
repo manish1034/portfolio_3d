@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
     mobile,
     backend,
@@ -19,10 +20,16 @@ import {
     starbucks,
     tesla,
     shopify,
+    vite,
+    atom,
+    fullstack,
     carrent,
     jobit,
     tripguide,
     threejs,
+    mini_insta,
+    edify,
+    dac,
   } from "../assets";
   
   export const navLinks = [
@@ -116,11 +123,11 @@ import {
   
   const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      title: "Full Stack Developer(MERN)",
+      company_name: "Edify Learning",
+      icon: fullstack,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "Nov 2023 - Jan 2024",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -129,11 +136,11 @@ import {
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
+      title: "React Js Developer",
+      company_name: "Mini-Insta",
+      icon: atom,
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "Mar 2023 - Apr 2023",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -142,11 +149,11 @@ import {
       ],
     },
     {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
+      title: "Vite Js Developer",
+      company_name: "DAC development",
+      icon: vite,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "Sept 2023 - Oct 2023",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -155,11 +162,11 @@ import {
       ],
     },
     {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+      title: "React Js Developer",
+      company_name: "Gym-Site development",
+      icon: atom,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "Nov 2022 - Dec 2022",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -237,21 +244,21 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      link: "https://manish1034.github.io/Movie-site/",
+      image: edify,
+      link: "https://edify-tau.vercel.app/",
       source_code_link: "https://github.com/manish1034",
     },
     {
-      name: "Social Website",
+      name: "Mini-Insta",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
+        "This site is just a clone of web-insta where all the frontend part is done and looking forward to make its backend part.",
+        tags: [
         {
-          name: "Nextjs",
+          name: "ReactJS",
           color: "blue-text-gradient",
         },
         {
-          name: "Websockets",
+          name: "MaterialUI",
           color: "green-text-gradient",
         },
         {
@@ -259,9 +266,31 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      link: "https://manish1034.github.io/Movie-site/",
-      source_code_link: "https://github.com/manish1034",
+      image: mini_insta,
+      link: "https://mini-insta-seven.vercel.app/",
+      source_code_link: "https://github.com/manish1034/Mini-Insta",
+    },
+    {
+      name: "DAC Website",
+      description:
+        "A College site for my friend college where I done their frontend and integration part with backend leads to this awesome site.",
+      tags: [
+        {
+          name: "ViteJs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Tailwind",
+          color: "green-text-gradient",
+        },
+        {
+          name: "React-Icons",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: dac,
+      link: "https://dac-website.vercel.app/",
+      source_code_link: "https://github.com/manish1034/DAC-website",
     },
   ];
   

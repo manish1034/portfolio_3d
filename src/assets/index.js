@@ -31,8 +31,14 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import vite from "./company/Vitejs.png"
+import atom from "./company/atom.png"
+import fullstack from "./company/fullstack.png"
 
 import carrent from "./carrent.png";
+import mini_insta from "./mini-insta.png"
+import edify from "./edify.png"
+import dac from "./dac.png"
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -68,7 +74,13 @@ export {
   shopify,
   starbucks,
   tesla,
+  vite,
+  atom,
+  fullstack,
   carrent,
+  mini_insta,
+  edify,
+  dac,
   jobit,
   tripguide,
 };
