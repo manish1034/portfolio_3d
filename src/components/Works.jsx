@@ -33,7 +33,7 @@ const ProjectCard = ({
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] md:w-[80%] md:h-[29rem] lg:w-[20rem] w-full'
       >
-        <div className='relative w-full h-[280px] md:h-[270px]'>
+        <div className='relative w-full h-[230px] md:h-[270px]'>
           <img
             src={image}
             alt='project_image'
