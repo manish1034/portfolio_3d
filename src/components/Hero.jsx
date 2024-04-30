@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="flex justify-between">
           <motion.div
             variants={fadeIn("left", "spring", 2, 2)}
-            className="2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-24 xs:mt-[4.5rem] 2xl:ml-9 xl:ml-9 lg:ml-9 md:ml-9 xs:-ml-4 2xl:text-[17px] xl:text-[17px] lg:text-[17px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl"
+            className="2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-24 xs:mt-[6rem] 2xl:ml-9 xl:ml-9 lg:ml-9 md:ml-9 xs:-ml-4 2xl:text-[17px] xl:text-[17px] lg:text-[17px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl"
           >
             Innovative Software Developer with extensive experience in building robust web applications using the MERN stack. Passionate about leveraging technology to drive business growth and enhance user experiences. Let's connect and explore opportunities to collaborate on exciting projects!😁👌
           </motion.div>
