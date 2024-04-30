@@ -44,7 +44,7 @@ const Hero = () => {
       </div>
 
       {/* mid-Intro */}
-      <div className="absolute blue-gradient py-[5rem] px-[3rem] top-[72%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[75vh] xl:h-[75vh] lg:h-[75vh] xs:h-[65vh] lg:w-[87%] md:w-[84%] xs:w-[82%] text-white">
+      <div className="absolute blue-gradient py-[5rem] px-[3rem] top-[72%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[75vh] xl:h-[75vh] lg:h-[75vh] xs:h-[55vh] lg:w-[87%] md:w-[84%] xs:w-[82%] text-white">
         <div className="flex justify-between">
           <motion.div
             variants={fadeIn("left", "spring", 2, 2)}
