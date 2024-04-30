@@ -14,13 +14,13 @@ const About = () => {
   return (
     <>
       {/* midCard */}
-      <div className="absolute blue-gradient py-[5rem] px-[3rem] -top-[20%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[85vh] xl:h-[85vh] lg:h-[85vh] xs:h-[70vh] lg:w-[87%] md:w-[84%] z-50">   
+      {/* <div className="relative blue-gradient py-[5rem] px-[3rem] -top-[20%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[85vh] xl:h-[85vh] lg:h-[85vh] xs:h-[70vh] lg:w-[87%] md:w-[84%] z-50">   
         <div className="absolute bottom-0 start-0 w-[100%] z-50">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
           <path fill="rgb(255, 255, 255)" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,186.7C384,203,480,245,576,240C672,235,768,181,864,165.3C960,149,1056,171,1152,160C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
         </div>
-      </div>
+      </div> */}
 
       {/* aboutSection */}
       <section id='about'>
