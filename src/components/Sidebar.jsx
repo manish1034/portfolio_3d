@@ -26,7 +26,7 @@ const Sidebar = () => {
   }, []);  
 
   return (
-    <div className='fixed z-30 right-8 bottom-[5%]'>
+    <div className='fixed z-30 right-8 bottom-[5%] xs:right-2 xs:bottom-10'>
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-1 sm:h-[9rem] h-[4rem] violet-gradient' />
         </div>

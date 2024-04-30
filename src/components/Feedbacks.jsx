@@ -24,14 +24,14 @@ const FeedbackCard = ({
     <p className='text-white font-black text-[48px]'>"</p>
 
     <div className='mt-1'>
-      <p className='text-white tracking-wider text-[18px]'>{testimonial}</p>
+      <p className='text-white tracking-wider 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] xs:text-[12px]'>{testimonial}</p>
 
       <div className='mt-7 flex justify-between items-center gap-1'>
         <div className='flex-1 flex flex-col'>
-          <p className='text-white font-medium text-[16px]'>
+          <p className='blue-text-gradient font-medium 2xl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] xs:text-[14px]'>
             <span className='blue-text-gradient'>@</span> {name}
           </p>
-          <p className='mt-1 text-secondary text-[12px]'>
+          <p className='mt-1 text-secondary 2xl:text-[12px] xl:text-[12px] lg:text-[12px] md:text-[12px] xs:text-[10px]'>
             {designation} of {company}
           </p>
         </div>

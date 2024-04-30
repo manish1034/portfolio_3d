@@ -1,5 +1,7 @@
 import logo from "./logo.svg";
+import myPhoto from "./my.png";
 import herobg from "./herobg.png";
+import heroMain from "./heroMain.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -44,7 +46,9 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
+  myPhoto,
   herobg,
+  heroMain,
   backend,
   creator,
   mobile,

@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect, useRef } from "react";
 import { styles } from "../styles";
+import { heroMain, myPhoto } from "../assets";
+import { FaGithub } from "react-icons/fa";
+import { TiSocialLinkedin } from "react-icons/ti";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import { gsap, Power4 } from "gsap";
-import { useEffect, useRef } from "react";
-
-
 
 const Hero = () => {
 
@@ -18,7 +19,7 @@ const Hero = () => {
   useEffect(()=>{
     tl.to([header],2.5,{
       opacity: 1,
-      y: 50,
+      y: 30,
       stagger:{
         amount: 4
       },
@@ -29,23 +30,46 @@ const Hero = () => {
   return (
 
     <section className='relative w-full h-screen mx-auto bg-[#090325] z-50'>
+
       <motion.div
-      variants={fadeIn("up","spring", 2 , 2)}
-      className="absolute blue-gradient py-[5rem] px-[3rem] top-[72%] left-[5%] inset-[3rem] rounded-3xl h-[75vh] lg:w-[87%] md:w-[84%] text-white">
-        <div className="absolute bottom-0 start-0 w-[100%] -z-20">
-        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="rgb(5, 8, 22)" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,186.7C384,203,480,245,576,240C672,235,768,181,864,165.3C960,149,1056,171,1152,160C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg> */}
-        </div>
-      </motion.div>
-      <div
-        className={`absolute top-[220px] flex flex-row items-start gap-5 inset-[4rem] max-w-7xl mx-auto ${styles.paddingX} z-20`}
+        variants={fadeIn("", "", 2, 2)} className="flex flex-col justify-between gap-6 p-12"
       >
-        <div className='absolute flex flex-col justify-center items-center mt-[10%] left-0'>
+        <FaGithub className="blue-text-gradient cursor-pointer" fontSize="32px"/>
+        <TiSocialLinkedin className="blue-text-gradient cursor-pointer" fontSize="32px"/>
+      </motion.div>
+
+      {/* main-img */}
+      <div className="absolute left-[69%] 2xl:top-[5rem] xl:top-[5rem] lg:top-[5rem] md:top-[5rem] xs:top-[1rem]">
+        <img src={heroMain} alt="main" className="h-[24rem] w-[24rem] animate-bouncy"/>
+      </div>
+
+      {/* mid-Intro */}
+      <div className="absolute blue-gradient py-[5rem] px-[3rem] top-[72%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[75vh] xl:h-[75vh] lg:h-[75vh] xs:h-[65vh] lg:w-[87%] md:w-[84%] xs:w-[82%] text-white">
+        <div className="flex justify-between">
+          <motion.div
+            variants={fadeIn("left", "spring", 2, 2)}
+            className="2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-24 xs:mt-[4.5rem] 2xl:ml-9 xl:ml-9 lg:ml-9 md:ml-9 xs:-ml-4 2xl:text-[17px] xl:text-[17px] lg:text-[17px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl"
+          >
+            Innovative Software Developer with extensive experience in building robust web applications using the MERN stack. Passionate about leveraging technology to drive business growth and enhance user experiences. Let's connect and explore opportunities to collaborate on exciting projects!😁👌
+          </motion.div>
+          <motion.div
+            variants={fadeIn("right","spring", 0.5, 1)}
+            className='relative overflow-hidden h-[22rem] w-[18rem] mr-[5rem] rounded-full -mt-16 xs:hidden sm:flex'
+          >
+            <img className='mb-5' src={myPhoto} alt=''/>
+          </motion.div>
+        </div>
+      </div>
+      
+      {/* main-Front */}
+      <div className={`absolute top-[220px] flex flex-row items-start gap-5 inset-[4rem] max-w-7xl mx-auto ${styles.paddingX} z-20`}>
+        <div className='xs:hidden sm:flex absolute flex flex-col justify-center items-center mt-[10%] left-0'>
           <div className='sticky top-[20rem] w-1 h-3 rounded-full bg-violet-900 z-10' />
           <div className='w-[0.1rem] sm:h-30 h-20 bg-white/50' />
         </div>
 
         <div className="sticky top-[10rem] flex flex-col">
-          <h1 className={`${styles.heroHeadText} text-white header`} ref={ele => header = ele}> Hi, I'm
+          <h1 className={`${styles.heroHeadText} text-white xs:text-[45px] 2xl:ml-5 xl:ml-5 lg:ml-5 xs:-ml-10`} ref={ele => header = ele}> Hi, I'm
              <span className='text-[#915EFF] pl-3'>Manish</span>
           </h1>
           {/* <p className={`${styles.heroSubText} mt-2 text-white`}>
@@ -55,7 +79,6 @@ const Hero = () => {
         </div>
       </div>
 
-      
     </section>
   );
 };

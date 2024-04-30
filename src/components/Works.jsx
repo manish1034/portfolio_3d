@@ -56,14 +56,14 @@ const ProjectCard = ({
 
         <div className='mt-5 md:mt-10'>
           <a href={link} target="_blank"><h3 className='text-white font-bold text-[24px]'>{name}</h3></a>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <p className='mt-2 text-secondary 2xl:text-[14px] xl:text-[14px] lg:text-[14px] md:text-[14px] xs:text-[12px]'>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`2xl:text-[14px] xl:text-[14px] lg:text-[14px] md:text-[14px] xs:text-[12px] ${tag.color}`}
             >
               #{tag.name}
             </p>
@@ -77,7 +77,7 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()} className="mx-5 relative -mt-28">
+      <motion.div variants={textVariant()} className="mx-5 relative 2xl:-mt-28 xl:-mt-28 lg:-mt-28 md:-mt-28 sm:-mt-28 xs:mt-2">
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
@@ -85,7 +85,7 @@ const Works = () => {
       <div className='w-full flex mx-5'>
         <motion.p
           variants={fadeIn("", "", 0.8, 0.5)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-secondary 2xl:text-[17px] xl:text-[17px] lg:text-[17px] md:text-[17px] sm:text-[17px] xs:text-[12px] max-w-3xl leading-[30px] xs:w-[90%]'
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
