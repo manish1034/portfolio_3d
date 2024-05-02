@@ -8,6 +8,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { useViewportScroll, useTransform, motion } from "framer-motion";
 import { gsap, Power4 } from "gsap";
 import Typewriter from 'typewriter-effect';
+import { Link } from "react-router-dom";
 
 
 const Hero = () => {
@@ -51,8 +52,8 @@ const Hero = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: 'spring', delay: 0.8, duration: 1.2, ease: "easeOut",}}
         className="flex flex-col justify-between gap-6 p-12">
-        <FaGithub className="blue-text-gradient cursor-pointer" fontSize="32px"/>
-        <TiSocialLinkedin className="blue-text-gradient cursor-pointer" fontSize="32px"/>
+        <Link to="https://github.com/manish1034" target="_blank"><FaGithub className="blue-text-gradient cursor-pointer" fontSize="32px"/></Link>
+        <Link to="https://www.linkedin.com/in/manish-chandra-09401b203/" target="_blank"><TiSocialLinkedin className="blue-text-gradient cursor-pointer" fontSize="32px"/></Link>
       </motion.div>
 
       {/* main-img */}
