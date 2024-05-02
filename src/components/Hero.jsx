@@ -5,11 +5,16 @@ import { styles } from "../styles";
 import { heroMain, myPhoto } from "../assets";
 import { FaGithub } from "react-icons/fa";
 import { TiSocialLinkedin } from "react-icons/ti";
-import { motion } from "framer-motion";
-import { fadeIn } from "../utils/motion";
+import { useViewportScroll, useTransform, motion } from "framer-motion";
 import { gsap, Power4 } from "gsap";
+import Typewriter from 'typewriter-effect';
+
 
 const Hero = () => {
+  const { scrollY } = useViewportScroll();
+  const yInput = [0, window.innerHeight * 0.6]; // Start and end points of the animation
+  const opacity = useTransform(scrollY, yInput, [0, 1]);
+  const translateY = useTransform(scrollY, yInput, ['-50%', '0%']);
 
   let tl = new gsap.timeline();
   let ease = Power4.easeOut();
@@ -27,13 +32,25 @@ const Hero = () => {
     })
   });
 
+  // const [startTyping, setStartTyping] = useState(false);
+
+  //   useEffect(() => {
+  //       const delayTimer = setTimeout(() => {
+  //           setStartTyping(true);
+  //       }, 2000); // Adjust the delay time (in milliseconds) as needed
+
+  //       return () => clearTimeout(delayTimer);
+  //   }, []);
+
   return (
 
     <section className='relative w-full h-screen mx-auto bg-[#090325] z-50'>
-
+      {/* top-corner-logo */}
       <motion.div
-        variants={fadeIn("", "", 2, 2)} className="flex flex-col justify-between gap-6 p-12"
-      >
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ type: 'spring', delay: 0.8, duration: 1.2, ease: "easeOut",}}
+        className="flex flex-col justify-between gap-6 p-12">
         <FaGithub className="blue-text-gradient cursor-pointer" fontSize="32px"/>
         <TiSocialLinkedin className="blue-text-gradient cursor-pointer" fontSize="32px"/>
       </motion.div>
@@ -46,16 +63,41 @@ const Hero = () => {
       {/* mid-Intro */}
       <div className="absolute blue-gradient py-[5rem] px-[3rem] top-[72%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[75vh] xl:h-[75vh] lg:h-[75vh] xs:h-[55vh] lg:w-[87%] md:w-[84%] xs:w-[82%] text-white">
         <div className="flex justify-between">
-          <motion.div
-            variants={fadeIn("left", "spring", 2, 2)}
-            className="2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-24 xs:mt-[6.5rem] 2xl:ml-9 xl:ml-9 lg:ml-9 md:ml-9 xs:-ml-4 2xl:text-[17px] xl:text-[17px] lg:text-[17px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl"
-          >
-            Innovative Software Developer with extensive experience in building robust web applications using the MERN stack. Passionate about leveraging technology to drive business growth and enhance user experiences. Let's connect and explore opportunities to collaborate on exciting projects!😁👌
-          </motion.div>
-          <motion.div
-            variants={fadeIn("right","spring", 0.5, 1)}
-            className='relative overflow-hidden h-[22rem] w-[18rem] mr-[5rem] rounded-full -mt-16 xs:hidden sm:flex'
-          >
+          <div className=" font-extralight 2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-24 xs:mt-[6.5rem] 2xl:ml-9 xl:ml-9 lg:ml-9 md:ml-9 xs:-ml-4 2xl:text-[22px] xl:text-[22px] lg:text-[22px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl">
+            <Typewriter
+              onInit={(typewriter) => {
+                  typewriter
+                        .pauseFor(1500) 
+                        .changeDelay(40) 
+                        .typeString("Innovative Software Developer")
+                        .pauseFor(1000) 
+                        .deleteAll()
+                        .changeDelay(40) 
+                        .typeString("with extensive experience in building robust web applications using the full-stack.")
+                        .pauseFor(1500) 
+                        .changeDeleteSpeed(10)
+                        .deleteChars(21)
+                        .changeDelay(30) 
+                        .typeString("using the MERN stack.")
+                        .pauseFor(1000) 
+                        .deleteAll()
+                        .changeDelay(40) 
+                        .typeString("Passionate about leveraging technology to drive business growth and enhance user experiences.")
+                        .pauseFor(1500)
+                        .deleteAll()
+                        .typeString("Let's connect and explore opportunities to collaborate on exciting projects!😁👌")
+                        .callFunction(() => {
+                            console.log('Typewriter animation complete');
+                        })
+                        .start();
+              }}
+            />
+          </div>
+          <motion.div 
+            initial={{ opacity: 0, x: 100 }}
+            style={{ opacity, x: translateY }}
+            transition={{ type: 'spring', delay: 4, duration: 1.2, ease: "easeOut",}}
+            className='relative overflow-hidden h-[22rem] w-[18rem] mr-[5rem] rounded-full -mt-[7rem] xs:hidden sm:flex'>
             <img className='mb-5' src={myPhoto} alt=''/>
           </motion.div>
         </div>
