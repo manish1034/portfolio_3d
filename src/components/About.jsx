@@ -11,10 +11,10 @@ import { qlearner, leadership, psolving } from "../assets";
 
 const About = () => {
   const { scrollY } = useViewportScroll();
-  const yInput = [0, window.innerHeight * 1.4]; // Start and end points of the animation
+  const yInput = [0, window.innerHeight * 1.5]; // Start and end points of the animation
   const opacity = useTransform(scrollY, yInput, [0, 1]);
-  const translateY = useTransform(scrollY, yInput, ['-100%', '0%']);
-  const translateYp = useTransform(scrollY, yInput, ['28%', '0%']);
+  const translateY = useTransform(scrollY, yInput, ['-130%', '0%']);
+  const translateYp = useTransform(scrollY, yInput, ['100%', '0%']);
 
   return (
     <>
@@ -56,8 +56,8 @@ const About = () => {
             <div className='flex-1 flex flex-col gap-y-11 2xl:gap-y-[4rem] xl:gap-y-[4.1rem] lg:gap-y-[11.4rem]'>
               {/* Card */}
               <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                style={{ opacity, x: translateYp }}
+                initial={{ opacity: 0, y:'-100%' }}
+                style={{ opacity, y: translateY }}
                 transition={{ type: 'spring', delay: 2, duration: 1.2, ease: "easeOut",}}
                 className='group relative overflow-hidden xl:h-[16.5rem] lg:h-[12.3rem] xs:h-[10rem] md:h-[17rem] w-[88%] md:w-[79%] lg:w-[88%] lg:mt-5 rounded-xl shadow-2xl shadow-white/5'>
                 <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
@@ -71,8 +71,8 @@ const About = () => {
               </motion.div>
               {/* Card */}
               <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                style={{ opacity, x: translateYp }}
+                initial={{ opacity: 0, y:'-100%' }}
+                style={{ opacity, y: translateYp }}
                 transition={{ type: 'spring', delay: 2, duration: 1.2, ease: "easeOut",}}
                 className='group relative overflow-hidden xl:h-[16.5rem] lg:h-[12rem] xs:h-[10rem] md:h-[17rem] w-[88%] md:w-[79%] lg:w-[88%] rounded-xl shadow-2xl shadow-white/10'>
                 <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
