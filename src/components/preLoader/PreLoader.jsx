@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { preLoaderAnim } from './animate.jsx';
+import { preLoaderAnim } from './animatee';
 
 const PreLoader = () => {
     const [showTag, setShowTag] = useState(true);
