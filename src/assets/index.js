@@ -16,7 +16,6 @@ import leadership from "./leadership.png";
 import qlearner from "./qlearner.jpg";
 
 import css from "./tech/css.png";
-import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -26,8 +25,12 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import api from "./tech/api.png";
+import githubskill from "./tech/github.png";
+import materialUI from "./tech/materialUI.png";
+import bootstrap from "./tech/bootstrap.png";
+import postman from "./tech/Postman.png";
+import expressjs from "./tech/express-js.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -62,7 +65,6 @@ export {
   leadership,
   qlearner,
   css,
-  docker,
   figma,
   git,
   html,
@@ -72,8 +74,12 @@ export {
   reactjs,
   redux,
   tailwind,
-  typescript,
-  threejs,
+  expressjs,
+  postman,
+  api,
+  materialUI,
+  githubskill,
+  bootstrap,
   meta,
   shopify,
   starbucks,

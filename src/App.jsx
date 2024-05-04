@@ -1,9 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import { fadeIn } from "./utils/motion";
-// import { Parallax } from "react-parallax";
-// import { herobg } from "./assets";
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, Sidebar,Feedbacks, Footer } from './components';
+import { Hero, About, Contact, Experience, Navbar, Tech, Works, StarsCanvas, Sidebar, Footer } from './components';
 
 const App = () => {
   return (
@@ -19,7 +15,7 @@ const App = () => {
           <Experience/>
           <Tech/>
           <Works/>
-          <Feedbacks/>
+          {/* <Feedbacks/> */}
           <div className="relative z-0">
             <Sidebar/>
             <Contact/>

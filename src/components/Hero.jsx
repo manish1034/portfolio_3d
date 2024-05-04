@@ -1,18 +1,19 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useRef } from "react";
+import PreLoader from "./preLoader/PreLoader";
 import { styles } from "../styles";
 import { heroMain, myPhoto } from "../assets";
 import { FaGithub } from "react-icons/fa";
 import { TiSocialLinkedin } from "react-icons/ti";
-import { useViewportScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { gsap, Power4 } from "gsap";
 import Typewriter from 'typewriter-effect';
 import { Link } from "react-router-dom";
 
 
 const Hero = () => {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const yInput = [0, window.innerHeight * 0.6]; // Start and end points of the animation
   const opacity = useTransform(scrollY, yInput, [0, 1]);
   const translateY = useTransform(scrollY, yInput, ['-50%', '0%']);
@@ -23,9 +24,9 @@ const Hero = () => {
   let header = useRef(null);
 
   useEffect(()=>{
-    tl.to([header],2.5,{
+    tl.to([header],5,{
       opacity: 1,
-      y: 30,
+      y: 40,
       stagger:{
         amount: 4
       },
@@ -33,42 +34,37 @@ const Hero = () => {
     })
   });
 
-  // const [startTyping, setStartTyping] = useState(false);
-
-  //   useEffect(() => {
-  //       const delayTimer = setTimeout(() => {
-  //           setStartTyping(true);
-  //       }, 2000); // Adjust the delay time (in milliseconds) as needed
-
-  //       return () => clearTimeout(delayTimer);
-  //   }, []);
-
   return (
-
-    <section className='relative w-full h-screen mx-auto bg-[#090325] z-50'>
+    <>
+    <PreLoader />
+    <section className='relative w-[98.9%] h-screen mx-auto bg-[#090325] z-40'>
       {/* top-corner-logo */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ type: 'spring', delay: 0.8, duration: 1.2, ease: "easeOut",}}
+        transition={{ type: 'spring', delay: 5, duration: 1.2, ease: "easeOut",}}
         className="flex flex-col justify-between gap-6 p-12">
         <Link to="https://github.com/manish1034" target="_blank"><FaGithub className="blue-text-gradient cursor-pointer" fontSize="32px"/></Link>
         <Link to="https://www.linkedin.com/in/manish-chandra-09401b203/" target="_blank"><TiSocialLinkedin className="blue-text-gradient cursor-pointer" fontSize="32px"/></Link>
       </motion.div>
 
       {/* main-img */}
-      <div className="absolute left-[69%] 2xl:top-[5rem] xl:top-[5rem] lg:top-[5rem] md:top-[5rem] xs:top-[1rem]">
+      <motion.div 
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: 'spring', delay: 4, duration: 1.2, ease: "easeOut",}}
+        className="absolute left-[69%] 2xl:top-[5rem] xl:top-[5rem] lg:top-[5rem] md:top-[5rem] xs:top-[1rem]">
         <img src={heroMain} alt="main" className="h-[24rem] w-[24rem] animate-bouncy"/>
-      </div>
+      </motion.div>
 
       {/* mid-Intro */}
       <div className="absolute blue-gradient py-[5rem] px-[3rem] top-[72%] left-[5%] inset-[3rem] rounded-3xl 2xl:h-[75vh] xl:h-[75vh] lg:h-[75vh] xs:h-[55vh] lg:w-[87%] md:w-[84%] xs:w-[82%] text-white">
         <div className="flex justify-between">
-          <div className=" font-extralight 2xl:mt-24 xl:mt-24 lg:mt-24 md:mt-24 xs:mt-[6.5rem] 2xl:ml-9 xl:ml-9 lg:ml-9 md:ml-9 xs:-ml-4 2xl:text-[22px] xl:text-[22px] lg:text-[22px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl">
+          <div className="font-extralight 2xl:mt-24 xs:mt-[6.5rem] 2xl:ml-8 xl:ml-10 lg:ml-14 sm:ml-0 md:ml-0 xs:-ml-4 xl:text-[22px] md:text-[17px] xs:text-[12px] leading-[30px] text-secondary max-w-lg xs:max-w-xl">
             <Typewriter
               onInit={(typewriter) => {
                   typewriter
-                        .pauseFor(1500) 
+                        .pauseFor(6500) 
                         .changeDelay(40) 
                         .typeString("Innovative Software Developer")
                         .pauseFor(1000) 
@@ -98,8 +94,8 @@ const Hero = () => {
             initial={{ opacity: 0, x: 100 }}
             style={{ opacity, x: translateY }}
             transition={{ type: 'spring', delay: 4, duration: 1.2, ease: "easeOut",}}
-            className='relative overflow-hidden h-[22rem] w-[18rem] mr-[5rem] rounded-full -mt-[7rem] xs:hidden sm:flex'>
-            <img className='mb-5' src={myPhoto} alt=''/>
+            className='relative overflow-hidden 2xl:mr-[5rem] xl:mr-[5rem] lg:mr-[0rem] 2xl:ml-20 xl:ml-10 lg:ml-14 rounded-full 2xl:-mt-[7rem] xl:-mt-[7rem] lg:-mt-[2rem] md:-mt-5 xs:hidden sm:hidden md:flex lg:flex'>
+            <img className='mb-5 xl:h-[22rem] lg:h-[16rem] md:h-[14rem] xl:w-[16.5rem] lg:w-[14rem] md:w-[14rem]' src={myPhoto} alt=''/>
           </motion.div>
         </div>
       </div>
@@ -111,18 +107,19 @@ const Hero = () => {
           <div className='w-[0.1rem] sm:h-30 h-20 bg-white/50' />
         </div>
 
-        <div className="sticky top-[10rem] flex flex-col">
-          <h1 className={`${styles.heroHeadText} text-white xs:text-[45px] 2xl:ml-5 xl:ml-5 lg:ml-5 xs:-ml-10`} ref={ele => header = ele}> Hi, I'm
-             <span className='text-[#915EFF] pl-3'>Manish</span>
+        <motion.div 
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', delay: 4, duration: 1.2, ease: "easeOut",}}
+          className="sticky top-[10rem] flex flex-col">
+          <h1 className={`${styles.heroHeadText} text-white 2xl:text-[65px] xs:text-[45px] xl:ml-5 lg:ml-5 xs:-ml-10`} ref={ele => header = ele}> Hi, I'm
+            <span className='text-[#915EFF] pl-3'>Manish</span>
           </h1>
-          {/* <p className={`${styles.heroSubText} mt-2 text-white`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
-          </p> */}
-        </div>
+        </motion.div>
       </div>
 
     </section>
+    </>
   );
 };
 

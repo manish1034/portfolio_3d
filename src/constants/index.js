@@ -5,7 +5,6 @@ import {
     creator,
     web,
     javascript,
-    typescript,
     html,
     css,
     reactjs,
@@ -15,21 +14,19 @@ import {
     mongodb,
     git,
     figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
     vite,
     atom,
     fullstack,
     carrent,
-    jobit,
-    tripguide,
-    threejs,
     mini_insta,
     edify,
     dac,
+    bootstrap,
+    githubskill,
+    api,
+    postman,
+    expressjs,
+    materialUI,
   } from "../assets";
   
   export const navLinks = [
@@ -68,20 +65,12 @@ import {
   
   const technologies = [
     {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
       name: "CSS 3",
       icon: css,
     },
     {
       name: "JavaScript",
       icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
     },
     {
       name: "React JS",
@@ -96,6 +85,14 @@ import {
       icon: tailwind,
     },
     {
+      name: "material ui",
+      icon: materialUI,
+    },
+    {
+      name: "expressjs",
+      icon: expressjs,
+    },
+    {
       name: "Node JS",
       icon: nodejs,
     },
@@ -104,8 +101,8 @@ import {
       icon: mongodb,
     },
     {
-      name: "Three JS",
-      icon: threejs,
+      name: "bootstrap",
+      icon: bootstrap,
     },
     {
       name: "git",
@@ -116,12 +113,33 @@ import {
       icon: figma,
     },
     {
-      name: "docker",
-      icon: docker,
+      name: "github",
+      icon: githubskill,
+    },
+    {
+      name: "api",
+      icon: api,
+    },
+    {
+      name: "Postmanapi",
+      icon: postman,
     },
   ];
   
   const experiences = [
+    {
+      title: "Frontend Developer(Intern)",
+      company_name: "1stop.ai",
+      icon: atom,
+      iconBg: "#E6DEDD",
+      date: "Feb 2024 - Apr 2024",
+      points: [
+        "Developing and maintaining web applications using HTML, CSS, JS, JQuery and Bootstrap.",
+        "Collaborating with cross-functional teams including designers to create high-quality websites.",
+        "Implementing responsive design and ensuring cross-browser compatibility.",
+        "Participating in code reviews and providing constructive feedback to other developers.",
+      ],
+    },
     {
       title: "Full Stack Developer(MERN)",
       company_name: "Edify Learning",
@@ -129,57 +147,43 @@ import {
       iconBg: "#383E56",
       date: "Nov 2023 - Jan 2024",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "React, Tailwind and React-icon used to make efficient and attractive Front-end.",
+        "MongoDB is used for database and whereas Express js for the server part.",
+        "As for security, bcrypt,JWT,Helmet,js and OAuth is used to hide essential info.",
+        "Web- Sockets is used to track user so that I can classify them into several leagues."
       ],
     },
     {
-      title: "React Js Developer",
+      title: "React Js Project",
       company_name: "Mini-Insta",
       icon: atom,
       iconBg: "#E6DEDD",
       date: "Mar 2023 - Apr 2023",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "I used this project as my first in React Js to learn about this technology.",
+        "React Js, Tailwind and Material UI for efficient UI/UX experience.",
+        "Material UI icons for attractive Front-end.",
       ],
     },
     {
-      title: "Vite Js Developer",
+      title: "Vite Js & Express Js Project",
       company_name: "DAC development",
       icon: vite,
       iconBg: "#383E56",
       date: "Sept 2023 - Oct 2023",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "In this Project, React, Tailwind, Materail UI and Fontawesome used for better look and experience.",
+        "Component State with useState and Effectful Logic with useEffect.",
+        "ExpressJs is used to make API and Authentic part.",
+        "Axios used to fetch data from API and map with find, reduce function to show the data from the API.",
       ],
-    },
-    {
-      title: "React Js Developer",
-      company_name: "Gym-Site development",
-      icon: atom,
-      iconBg: "#E6DEDD",
-      date: "Nov 2022 - Dec 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
+    }
   ];
   
   const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+        "Great to have work with him. Knows better in his field and have better experience.",
       name: "Sara Lee",
       designation: "CFO",
       company: "Acme Co",

@@ -246,3 +246,51 @@
 .animate-bouncy {
   animation: bouncy 1.5s infinite;
 }
+
+.preloader {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden !important;
+}
+
+.texts-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 280px;
+    font-size: 20px;
+    overflow: hidden;
+    font-weight: 800;
+    opacity: 0;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d2d2d2;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #807f7f;
+}
