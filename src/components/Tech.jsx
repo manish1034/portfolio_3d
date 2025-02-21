@@ -20,10 +20,17 @@ const Tech = () => {
                       lg:w-24 lg:h-24 
                       md:w-20 md:h-20 
                       sm:w-16 sm:h-16 
-                      xs:w-14 xs:h-14' 
+                      xs:w-14 xs:h-14
+                      relative group' 
             key={technology.name}
           >
             <BallCanvas icon={technology.icon} />
+            <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 
+                          bg-black/80 text-white px-2 py-1 rounded-md text-sm
+                          opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                          whitespace-nowrap pointer-events-none">
+              {technology.name}
+            </div>
           </div>
         ))}
       </div>
