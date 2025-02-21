@@ -5,9 +5,11 @@ import {
     creator,
     web,
     javascript,
-    html,
     css,
     reactjs,
+    nextjs,
+    nuxtjs,
+    vue,
     redux,
     tailwind,
     nodejs,
@@ -21,12 +23,12 @@ import {
     mini_insta,
     edify,
     dac,
-    bootstrap,
     githubskill,
     api,
     postman,
     expressjs,
-    materialUI,
+    bootstrap,
+    langchain,
   } from "../assets";
   
   export const navLinks = [
@@ -65,8 +67,12 @@ import {
   
   const technologies = [
     {
-      name: "CSS 3",
-      icon: css,
+      name: "Next JS",
+      icon: nextjs,
+    },
+    {
+      name: "Redux Toolkit",
+      icon: redux,
     },
     {
       name: "JavaScript",
@@ -77,16 +83,20 @@ import {
       icon: reactjs,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
+      name: "Vue JS",
+      icon: vue,
+    },
+    {
+      name: "Nuxt JS",
+      icon: nuxtjs,
     },
     {
       name: "Tailwind CSS",
       icon: tailwind,
     },
     {
-      name: "material ui",
-      icon: materialUI,
+      name: "Langchain",
+      icon: langchain,
     },
     {
       name: "expressjs",
@@ -103,14 +113,6 @@ import {
     {
       name: "bootstrap",
       icon: bootstrap,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
     },
     {
       name: "github",

@@ -294,3 +294,92 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #807f7f;
 }
+
+.space-particles {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+@keyframes moveParticle3D {
+  0% {
+    transform: translateX(-100%) translateZ(-50px) rotateY(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(-25%) translateZ(100px) rotateY(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0%) translateZ(150px) rotateY(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateX(25%) translateZ(100px) rotateY(270deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateZ(-50px) rotateY(360deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: moveParticle3D 12s infinite linear;
+  filter: blur(0.5px);
+  transform-style: preserve-3d;
+}
+
+/* Update varied speeds */
+.particle:nth-child(2n) {
+  width: 3px;
+  height: 3px;
+  animation-duration: 10s;
+}
+
+.particle:nth-child(3n) {
+  width: 1.5px;
+  height: 1.5px;
+  animation-duration: 14s;
+}
+
+.particle:nth-child(4n) {
+  width: 2.5px;
+  height: 2.5px;
+  animation-duration: 16s;
+}
+
+/* Add more depth variation */
+.particle:nth-child(2n) {
+  transform: translateZ(75px);
+}
+
+.particle:nth-child(3n) {
+  transform: translateZ(-75px);
+}
+
+.particle:nth-child(4n) {
+  transform: translateZ(150px);
+}
+
+/* Add glow effect */
+.particle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(2px);
+  opacity: 0.5;
+}
+

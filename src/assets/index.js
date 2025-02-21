@@ -23,11 +23,14 @@ import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
+import nextjs from "./tech/nextjs.png";
+import vue from "./tech/vue.png";
+import nuxtjs from "./tech/nuxtjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import api from "./tech/api.png";
+import langchain from "./tech/langchain.png";
 import githubskill from "./tech/github.png";
-import materialUI from "./tech/materialUI.png";
 import bootstrap from "./tech/bootstrap.png";
 import postman from "./tech/Postman.png";
 import expressjs from "./tech/express-js.png";
@@ -72,12 +75,15 @@ export {
   mongodb,
   nodejs,
   reactjs,
+  nextjs,
+  nuxtjs,
+  vue,
   redux,
   tailwind,
   expressjs,
   postman,
   api,
-  materialUI,
+  langchain,
   githubskill,
   bootstrap,
   meta,

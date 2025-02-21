@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react-refresh/only-export-components */
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useViewportScroll, useTransform, motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -13,13 +13,27 @@ const About = () => {
   const { scrollY } = useViewportScroll();
   const yInput = [0, window.innerHeight * 1.5]; // Start and end points of the animation
   const opacity = useTransform(scrollY, yInput, [0, 1]);
-  const translateY = useTransform(scrollY, yInput, ['-130%', '0%']);
+  const translateY = useTransform(scrollY, yInput, ['-80%', '0%']);
+  const translateY2 = useTransform(scrollY, yInput, ['-300%', '0%']);
+  const translateY3 = useTransform(scrollY, yInput, ['-620%', '0%']);
   const translateYp = useTransform(scrollY, yInput, ['100%', '0%']);
+
+  // Add screen size check
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
       <section id='about'>
-        <div className='container mx-5 xl:mt-[52vh] lg:mt-[55vh] md:mt-[42vh] sm:mt-[45vh] xs:mt-[38vh]'>
+        <div className='container mx-5 xl:mt-[48vh] lg:mt-[55vh] md:mt-[42vh] sm:mt-[45vh] xs:mt-[38vh]'>
           <div className='flex flex-col lg:flex-row gap-x-10'>
 
             {/* leftpart */}
@@ -56,8 +70,13 @@ const About = () => {
             <div className='flex-1 flex flex-col gap-y-11 2xl:gap-y-[4rem] xl:gap-y-[4.1rem] lg:gap-y-[11.4rem]'>
               {/* Card */}
               <motion.div
-                initial={{ opacity: 0, y:'-100%' }}
-                style={{ opacity, y: translateY }}
+                initial={{ opacity: 0, x: isMobile ? 100 : 0, y: isMobile ? 0 : '-100%' }}
+                style={{ 
+                  opacity, 
+                  ...(isMobile 
+                    ? { x: translateY2 } 
+                    : { y: translateY })
+                }}
                 transition={{ type: 'spring', delay: 2, duration: 1.2, ease: "easeOut",}}
                 className='group relative overflow-hidden xl:h-[16.5rem] lg:h-[12.3rem] xs:h-[10rem] md:h-[17rem] w-[88%] md:w-[79%] lg:w-[88%] lg:mt-5 rounded-xl shadow-2xl shadow-white/5'>
                 <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
@@ -71,8 +90,13 @@ const About = () => {
               </motion.div>
               {/* Card */}
               <motion.div
-                initial={{ opacity: 0, y:'-100%' }}
-                style={{ opacity, y: translateYp }}
+                initial={{ opacity: 0, x: isMobile ? 100 : 0, y: isMobile ? 0 : '-100%' }}
+                style={{ 
+                  opacity, 
+                  ...(isMobile 
+                    ? { x: translateY3 } 
+                    : { y: translateYp })
+                }}
                 transition={{ type: 'spring', delay: 2, duration: 1.2, ease: "easeOut",}}
                 className='group relative overflow-hidden xl:h-[16.5rem] lg:h-[12rem] xs:h-[10rem] md:h-[17rem] w-[88%] md:w-[79%] lg:w-[88%] rounded-xl shadow-2xl shadow-white/10'>
                 <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
